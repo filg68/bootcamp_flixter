@@ -76,3 +76,6 @@ end
 # Simple form
 gem 'simple_form'
 
+# Devise - user authentication
+gem 'devise'
+
