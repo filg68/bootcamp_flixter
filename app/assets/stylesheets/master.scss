@@ -1,9 +1,18 @@
 @import 'bootstrap';
 
 body {
+  background-image: image_url('brushed.png');
   font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", 
     Verdana, "Verdana Ref", sans-serif;
 }
+
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+
 .hero {
   background: image_url('hero.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
