@@ -7,6 +7,10 @@ body {
 
 .navbar {
   box-shadow: 0px 1px 3px #2a2a2a;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  background: image_url('scribble_light.png');
 }
 
 .navbar-inverse .navbar-brand {
@@ -17,3 +21,18 @@ body {
   font-size: 40px;
   color: #F61B08;
 }
+
+.nav-link {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+color: rgb(128,128,128);
+font-size:  30px;
+}
+
+.navbar-inverse .navbar-nav .active > .nav-link {
+  color: black;
+  font-size: 30px;
+}
+
