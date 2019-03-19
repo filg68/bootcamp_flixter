@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# Carrierwave installation for image management
+gem 'carrierwave', '~> 1.0'
+
 
 # install jquery in preparation for installing bootstrap files
 gem 'jquery-rails'
