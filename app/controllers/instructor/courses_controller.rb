@@ -1,6 +1,6 @@
 class Instructor::CoursesController < ApplicationController
   before_action :authenticate_user!
-  # before_action :require_authorized_for_current_course
+  before_action :require_authorized_for_current_course
 
   def new
     @course = Course.new
@@ -22,9 +22,19 @@ class Instructor::CoursesController < ApplicationController
 
   private
 
+  def course_id_exists
+    if params[:id]
+      return true
+    else
+      return false
+    end
+  end
+
   def require_authorized_for_current_course
-    if current_course.user != current_user
-      render plain: "Unauthorized", status: :unauthorized
+    if course_id_exists
+      if current_course.user != current_user
+        render plain: "Unauthorized", status: :unauthorized
+      end
     end
   end
 
