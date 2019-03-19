@@ -6,6 +6,8 @@ class Instructor::CoursesController < ApplicationController
     @course = Course.new
   end
 
+
+
   def create
     @course = current_user.courses.create(course_params)
     if @course.valid?
@@ -20,11 +22,11 @@ class Instructor::CoursesController < ApplicationController
 
   private
 
-  #def require_authorized_for_current_course
-  #  if @course.user != current_user
-  #    render plain: "Unauthorized", status: :unauthorized
-  #  end
-  #end
+  def require_authorized_for_current_course
+    if current_course.user != current_user
+      render plain: "Unauthorized", status: :unauthorized
+    end
+  end
 
   helper_method :current_course
   def current_course
