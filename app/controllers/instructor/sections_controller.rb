@@ -24,7 +24,7 @@ class Instructor::SectionsController < ApplicationController
     @current_course ||= Course.find(params[:course_id])
   end
 
-  def sections_params
+  def section_params
     params.require(:section).permit(:title)
   end
 
