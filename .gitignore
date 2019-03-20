@@ -4,6 +4,8 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+public/uploads/**
+
 # Ignore bash files created for my use
 lazy_git
 start_rails
@@ -29,3 +31,6 @@ start_rails
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore application configuration
+/config/application.yml

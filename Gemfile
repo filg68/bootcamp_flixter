@@ -6,6 +6,15 @@ ruby '2.5.3'
 # Carrierwave installation for image management
 gem 'carrierwave', '~> 1.0'
 
+# Figaro gem for ENV variables management
+gem "figaro"
+
+# Enables carrierwave to talk to AWS
+gem "fog-aws"
+
+# Mini-magick integration with ImageMagick for image resizing
+gem "mini_magick"
+
 
 # install jquery in preparation for installing bootstrap files
 gem 'jquery-rails'
