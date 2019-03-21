@@ -6,6 +6,16 @@ body {
     Verdana, "Verdana Ref", sans-serif;
 }
 
+.navbar-flex-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.user-access-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -102,12 +112,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .navbar-inverse .navbar-nav .nav-link {
-color: rgb(128,128,128);
+color: black;
 font-size:  30px;
 }
 
-.navbar-inverse .navbar-nav .active > .nav-link {
-  color: black;
-  font-size: 30px;
-}
 
