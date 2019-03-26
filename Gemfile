@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# RankedModel - ordering items in a database
+gem 'ranked-model'
+
 # Stripe - payment processing integration
 gem 'stripe'
 
