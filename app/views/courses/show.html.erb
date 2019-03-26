@@ -5,12 +5,18 @@
   <h1>
     <% if current_user && current_user == @course.user %>
       <%= image_tag @course.image.url, class: 'img-fluid' %>
-      <%= @course.title %> <%= link_to 'Administer', instructor_course_path(@course), class: 'float-right btn btn-danger btn-primary' %>
+      <%= @course.title %> 
+      <% if current_user.enrolled_in?(@course) %>
+          <h3 class="badge badge-info">You Are Enrolled!</h3>
+        <% else %>
+          <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+      <% end %>
+      <%= link_to 'Administer', instructor_course_path(@course), class: 'float-right btn btn-danger btn-primary' %>
       <br />
     <% else %>
       <%= image_tag @course.image.url, class: 'img-fluid' %>
       <%= @course.title %>
-            <% if current_user && current_user.enrolled_in?(@course) %>
+      <% if current_user && current_user.enrolled_in?(@course) %>
         <h3 class="badge badge-info">You Are Enrolled!</h3>
       <% else %>
         <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
