@@ -100,3 +100,6 @@ gem 'simple_form'
 # Devise - user authentication
 gem 'devise'
 
+# Icons for use in app - Font Awesome
+gem 'font-awesome-rails'
+
