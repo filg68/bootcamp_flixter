@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# Enables drag and drop functionality for the instructor lessons
+gem 'jquery-ui-rails'
+
 # RankedModel - ordering items in a database
 gem 'ranked-model'
 
