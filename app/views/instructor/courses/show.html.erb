@@ -4,7 +4,8 @@
     $('.new-lesson-button').click(function() {
       // debugger;
       var lessonUrl = $(event.target).data('lesson-url');
-      alert (lessonUrl)
+      //alert(lessonUrl);
+      $('#newLessonForm').attr('action', lessonUrl);
     });
 
     $('.lessons').sortable({
@@ -53,7 +54,7 @@
   <br class="clr">
 
   <div class="text-center">
-    <!-- Button trigger modal -->
+    <!-- Button trigger new section modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newSectionModal">
       Add a new section
     </button>
@@ -67,7 +68,7 @@
           <%= section.title %>
 
           <!-- Button trigger new lesson modal -->
-          <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+          <button type="button" class="btn btn-primary float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
             Add a Lesson
           </button>
 
@@ -142,10 +143,10 @@
           <%= f.input :subtitle %>
           <%= f.input :video %>
       </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= f.submit "Add the lesson", class: 'btn btn-primary' %>
-          </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Add the lesson", class: 'btn btn-primary' %>
+      </div>
         <% end %>
     </div>
   </div>
