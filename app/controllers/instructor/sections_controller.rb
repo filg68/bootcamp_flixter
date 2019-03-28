@@ -1,10 +1,7 @@
 class Instructor::SectionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_authorized_for_current_course
-
-  def new
-    @section = Section.new
-  end
+  before_action :require_authorized_for_current_course, only: [:create]
+  before_action :require_authorized_for_current_section, only: [:update]
 
   def create
     @section = current_course.sections.create(section_params)
@@ -20,6 +17,12 @@ class Instructor::SectionsController < ApplicationController
 
   def require_authorized_for_current_course
     if current_course.user != current_user
+      render plain: "Unauthorized", status: :unauthorized
+    end
+  end
+
+  def require_authorized_for_current_section
+    if current_section.user != current_user
       render plain: "Unauthorized", status: :unauthorized
     end
   end
